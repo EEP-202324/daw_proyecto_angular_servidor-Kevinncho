@@ -1,0 +1,79 @@
+{
+  "locations":[
+
+{
+  "id": 0,
+  "nombre": "Facultad de Derecho",
+  "ciudad": "México",
+  "campus": "JurisPraeceptum",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
+  "carreras": 4,
+  "wifi": true
+
+},
+{
+  "id": 1,
+  "nombre": "Facultad de Ingenería",
+  "ciudad": "Quito",
+  "campus": "Politec",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/E.T.S._de_Ingenieros_Industriales_%28UPM%29_01.jpg/1920px-E.T.S._de_Ingenieros_Industriales_%28UPM%29_01.jpg",
+  "carreras": 7,
+  "wifi": true
+},
+{
+  "id": 2,
+  "nombre": "Facultad de Agronomía",
+  "ciudad": "Cuzco",
+  "campus": "AgroVita",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Edificio_de_Agronom%C3%ADa_Tropical_Sostenible%2C_Facultad_de_Ciencias_Agron%C3%B3micas_%28UES%29.jpg/1280px-Edificio_de_Agronom%C3%ADa_Tropical_Sostenible%2C_Facultad_de_Ciencias_Agron%C3%B3micas_%28UES%29.jpg",
+  "carreras": 8,
+  "wifi": true
+},
+{
+  "id": 3,
+  "nombre": "Facultad de Medicina",
+  "ciudad": "Quito",
+  "campus": "MedicaPulse",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Harvard_Medical_School_HDR.jpg/1280px-Harvard_Medical_School_HDR.jpg",
+  "carreras": 4,
+  "wifi": true
+},
+{
+  "id": 4,
+  "nombre": "Facultad de Arquitectura",
+  "ciudad": "San Salvador",
+  "campus": "UCA",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Facultad_de_arquitectura_urbanismo_y_diseno_UNC.jpg/800px-Facultad_de_arquitectura_urbanismo_y_diseno_UNC.jpg",
+  "carreras": 5,
+  "wifi": true
+},
+{
+  "id": 5,
+  "nombre": "Facultad de Artes y Diseño",
+  "ciudad": "Sucre",
+  "campus": "Arts",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Facultad_de_Bellas_Artes_%28Universidad_Complutense_de_Madrid%29.JPG/1280px-Facultad_de_Bellas_Artes_%28Universidad_Complutense_de_Madrid%29.JPG",
+  "carreras": 8,
+  "wifi": true
+},
+{
+  "id": 6,
+  "nombre": "Facultad de Psicología",
+  "ciudad": "Buenos Aires",
+  "campus": "Psico",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/UNMSM_Facultad_de_Psicolog%C3%ADa_2023.jpg/1280px-UNMSM_Facultad_de_Psicolog%C3%ADa_2023.jpg",
+  "carreras": 4,
+  "wifi": true
+},
+{
+  "id": 7,
+  "nombre": "Facultad de Educación",
+  "ciudad": "Montevideo",
+  "campus": "EDU",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/4/45/Pontevedra_capital_Facultad_Ciencias_de_la_Educaci%C3%B3n_y_del_Deporte.jpg",
+  "carreras": 10,
+  "wifi": true
+}
+
+]
+}
