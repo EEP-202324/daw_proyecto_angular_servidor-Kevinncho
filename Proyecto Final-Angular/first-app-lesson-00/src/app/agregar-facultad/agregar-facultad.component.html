@@ -1,0 +1,26 @@
+<img class="listing-photo" src="https://clipground.com/images/beaver-images-clip-art-4.jpg">
+   <section class="listing-apply">
+      <h1 class="section-heading">AGREGAR NUEVA FACULTAD</h1>
+      <form [formGroup]="FormFacu" (submit)="enviar()">
+        <label for="nombre">Nombre Facultad </label>
+        <input id="nombre" type="text" formControlName="nombre">
+
+        <label for="ciudad">Ciudad</label>
+        <input id="ciudad" type="text" formControlName="ciudad">
+
+        <label for="campus">Campus</label>
+        <input id="campus" type="text" formControlName="campus">
+        <label for="photo">Url Foto</label>
+        <input id="photo" type="text" formControlName="photo">
+
+        <label for="carreras">Carreras</label>
+        <input id="carreras" type="text" formControlName="carreras">
+
+        <label for="Wifi">Wifi</label>
+        <input id="Wifi" type="text" formControlName="Wifi">
+
+
+
+
+        <button type="submit" class="primary">Insertar</button>
+      </form>

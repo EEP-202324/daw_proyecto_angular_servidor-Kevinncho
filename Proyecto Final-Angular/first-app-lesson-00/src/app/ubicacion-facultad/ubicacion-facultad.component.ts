@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UbicacionFacultad } from '../ubicacion-facultad';
 import { RouterModule } from '@angular/router';
+import { FacultadService } from '../facultad.service';
 
 @Component({
   selector: 'app-ubicacion-facultad',
@@ -20,6 +21,22 @@ import { RouterModule } from '@angular/router';
   `,
   styleUrls: ['./ubicacion-facultad.component.css'],
 })
-export class UbicacionFacultadComponent {
+export class UbicacionFacultadComponent implements OnInit{
+  ubicacionFacultades: UbicacionFacultad[]=[]
+  constructor(private facultadService: FacultadService){}
+
+  ngOnInit(): void {
+    this.ObtenerFacultades();
+  }
+  ObtenerFacultades(){
+    this.facultadService.getFacultades().subscribe(
+      facultades =>{
+          this.ubicacionFacultades=facultades;
+      },
+      error =>{
+        console.error('Error al obtener las facultades: ', error);
+      }
+    );
+  }
   @Input() ubicacionFacultad!: UbicacionFacultad;
 }

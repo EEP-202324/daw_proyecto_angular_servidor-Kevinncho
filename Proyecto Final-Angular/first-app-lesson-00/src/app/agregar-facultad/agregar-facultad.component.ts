@@ -1,34 +1,38 @@
-import { Component,inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl,FormGroup,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 import { FacultadService } from '../facultad.service';
 import { UbicacionFacultad } from '../ubicacion-facultad';
+import { Validators } from '@angular/forms';
 @Component({
   selector: 'app-agregar-facultad',
+  templateUrl: './agregar-facultad.component.html',
   standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule
   ],
   template: `
+    <img class="listing-photo" src="https://clipground.com/images/beaver-images-clip-art-4.jpg">
    <section class="listing-apply">
-      <h2 class="section-heading">AGREGAR NUEVA FACULTAD</h2>
+      <h1 class="section-heading">AGREGAR NUEVA FACULTAD</h1>
       <form [formGroup]="FormFacu" >
-        <label for="NombreFacultad">Nombre Facultad </label>
-        <input id="NombreFacultad" type="text" formControlName="NombreFacultad">
+        <label for="nombre">Nombre Facultad </label>
+        <input id="nombre" type="text" formControlName="nombre">
 
-        <label for="Ciudad">Ciudad</label>
-        <input id="Ciudad" type="text" formControlName="Ciudad">
+        <label for="ciudad">Ciudad</label>
+        <input id="ciudad" type="text" formControlName="ciudad">
 
-        <label for="Campus">Campus</label>
-        <input id="Campus" type="text" formControlName="Campus">
-        <label for="Foto">Url Foto</label>
-        <input id="Foto" type="text" formControlName="Foto">
+        <label for="campus">Campus</label>
+        <input id="campus" type="text" formControlName="campus">
+        <label for="photo">Url Foto</label>
+        <input id="photo" type="text" formControlName="photo">
 
-        <label for="Carreras">Carreras</label>
-        <input id="Carreras" type="text" formControlName="Carreras">
+        <label for="carreras">Carreras</label>
+        <input id="carreras" type="text" formControlName="carreras">
 
+        <label for="Wifi">Wifi</label>
+        <input id="Wifi" type="checkbox" formControlName="Wifi">
 
 
 
@@ -39,15 +43,34 @@ import { UbicacionFacultad } from '../ubicacion-facultad';
 })
 export class AgregarFacultadComponent {
   FormFacu= new FormGroup({
-    NombreFacultad: new FormControl(''),
-    Ciudad: new FormControl(''),
-    Campus: new FormControl(''),
+    //id: new FormControl('',[Validators.required, Validators.pattern('^[0-9]+$')]),
 
-    Foto: new FormControl(''),
+    nombre: new FormControl(''),
+    ciudad: new FormControl(''),
+    campus: new FormControl(''),
 
-    Carreras: new FormControl(''),
+    photo: new FormControl(''),
+
+    carreras: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
+
+    Wifi: new FormControl('', [Validators.required, Validators.pattern('^(true|false)$')])
 
   });
+
+  constructor(private facultadService: FacultadService){}
+
+  enviar(){
+    const facultadDatos= this.FormFacu.value;
+    this.facultadService.agregarFacultad(facultadDatos).subscribe(
+      nuevaFacultad =>{
+        console.log('Nueva facultad agregada', nuevaFacultad);
+      },
+      error=>{
+        console.log('Error al agregar la facultad:', error)
+      }
+  );
+  }
+
 
 
 

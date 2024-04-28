@@ -22,7 +22,7 @@
 }
 
 .listing-features > .section-heading {
-  color: var(--secondary-color);
+  color: var(--boton-color);
   font-size: 24pt;
   margin-bottom: 15px;
 }
@@ -48,10 +48,11 @@ label, input {
   display: block;
 }
 label {
-  color: var(--secondary-color);
+  color: var(--boton-color);
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12pt;
+
 }
 input {
   font-size: 16pt;
@@ -68,4 +69,8 @@ input {
     width: 100%;
     height: 400px;
   }
+}
+button{
+  background-color: var(--boton-color);
+  border-color: var(--boton-color);
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UbicacionFacultad } from './ubicacion-facultad';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,10 @@ export class FacultadService {
     presentarSolicitud(Nombre: string, Apellido: string, email: string){
       alert(`Solicitud de facultad recibida: Nombre: ${Nombre},
       Apellido: ${Apellido}, email: ${email}`);
+    }
+
+    agregarFacultad(facultadDatos: any): Observable<UbicacionFacultad>{
+      return this.http.post<UbicacionFacultad>(this.url, facultadDatos);
     }
 }
 
