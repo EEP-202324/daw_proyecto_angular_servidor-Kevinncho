@@ -73,13 +73,22 @@
       "wifi": true
     },
     {
-      "id": "8",
+      "id": "2460",
       "nombre": "Facultad de Biologia",
       "ciudad": "Cuzco ",
       "campus": "NuevaFlor",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Madrid_-_Ciudad_Universitaria%2C_Facultad_de_Ciencias_Biol%C3%B3gicas_de_la_UCM.jpg/405px-Madrid_-_Ciudad_Universitaria%2C_Facultad_de_Ciencias_Biol%C3%B3gicas_de_la_UCM.jpg",
+      "photo": "https://biologicas.ucm.es/file/2022-facultad-05?ver=n",
       "carreras": "4",
       "Wifi": "true"
+    },
+    {
+      "id": "c723",
+      "nombre": "Facultad de Economía",
+      "ciudad": "Buenos Aires",
+      "campus": "FADE",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/SGH_Warsaw_2023_aerial.jpg/1920px-SGH_Warsaw_2023_aerial.jpg",
+      "carreras": "7",
+      "Wifi": "false"
     }
   ]
 }

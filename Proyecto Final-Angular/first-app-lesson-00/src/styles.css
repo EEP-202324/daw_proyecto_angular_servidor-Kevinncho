@@ -24,10 +24,12 @@ button.primary {
   background: var(--primary-color);
   color: white;
   border-radius: 8px;
+  cursor: pointer;
 }
 button.agregar{
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .brand-name {

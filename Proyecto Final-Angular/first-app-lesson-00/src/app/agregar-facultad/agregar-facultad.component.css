@@ -1,6 +1,6 @@
 .listing-photo {
-  height: 600px;
-  width: 50%;
+  height: 500px;
+  width: 40%;
   object-fit: cover;
   border-radius: 30px;
   float: right;
@@ -73,4 +73,5 @@ input {
 button{
   background-color: var(--boton-color);
   border-color: var(--boton-color);
+  cursor: pointer;
 }

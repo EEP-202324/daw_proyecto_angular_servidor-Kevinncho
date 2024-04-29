@@ -64,9 +64,11 @@ export class AgregarFacultadComponent {
     this.facultadService.agregarFacultad(facultadDatos).subscribe(
       nuevaFacultad =>{
         console.log('Nueva facultad agregada', nuevaFacultad);
+        alert('Se ha agregado la facultad exitosamente');
       },
       error=>{
         console.log('Error al agregar la facultad:', error)
+        alert('Ha ocurrido un error al agregar la facultad')
       }
   );
   }
