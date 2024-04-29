@@ -16,7 +16,8 @@ import { FacultadService } from '../facultad.service';
     <img class="listing-photo" [src]="ubicacionFacultad.photo" alt="Exterior photo of {{ubicacionFacultad.nombre}}">
     <h2 class="listing-heading">{{ ubicacionFacultad.nombre }}</h2>
     <p class="listing-location">{{ ubicacionFacultad.ciudad}}, {{ubicacionFacultad.campus }}</p>
-    <a [routerLink]= "['/details', ubicacionFacultad.id]">Mas detalles</a>
+    <a [routerLink]= "['/details', ubicacionFacultad.id]">Modificar</a>
+    <a src="#">Borrar</a>
   </section>
   `,
   styleUrls: ['./ubicacion-facultad.component.css'],

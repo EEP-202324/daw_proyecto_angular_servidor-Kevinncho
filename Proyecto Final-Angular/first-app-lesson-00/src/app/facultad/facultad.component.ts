@@ -22,8 +22,7 @@ import './facultad.component.css';
     </form>
     <br>
     <a [routerLink]="['/agregar']"> <button class="boton agregar" type="button" >Agregar</button></a>
-    <button class="boton borrar" type="button" (click)="BorrarFacultades">Borrar</button>
-    <button class="boton modificar" type="button" (click)="ModificarFacultades">modificar</button>
+
 
   </section>
   <section class="results">
