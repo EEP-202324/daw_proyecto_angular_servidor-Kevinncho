@@ -26,5 +26,18 @@ class FacultadesJsonTest {
      assertThat(json.write(facultades)).extractingJsonPathNumberValue("@.amount")
           .isEqualTo(123.45);
 	 
- }
+	 }
+	 @Test
+	 void FacultadesDeserializationTest() throws IOException {
+	    String expected = """
+	            {
+	                "id":99,
+	                "amount":123.45
+	            }
+	            """;
+	    assertThat(json.parse(expected))
+	            .isEqualTo(new Facultades(99L, 123.45));
+	    assertThat(json.parseObject(expected).id()).isEqualTo(99);
+	    assertThat(json.parseObject(expected).amount()).isEqualTo(123.45);
+	 }
 }
