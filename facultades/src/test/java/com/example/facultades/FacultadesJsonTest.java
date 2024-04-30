@@ -16,7 +16,8 @@ class FacultadesJsonTest {
 	 
 	 @Test
 	 void facultadesSerializationTest() throws  IOException{
-		 Facultades facultades= new Facultades(99L, 123.45);
+		 Facultades facultades= new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum","https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
+				 4L,true);
 	 
 	 assertThat(json.write(facultades)).isStrictlyEqualToJson("expected.json");
      assertThat(json.write(facultades)).hasJsonPathNumberValue("@.id");
