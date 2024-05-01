@@ -55,13 +55,13 @@
       "wifi": true
     },
     {
-      "id": "6",
       "nombre": "Facultad de Psicología",
-      "ciudad": "Buenos Aires",
-      "campus": "Psico",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/UNMSM_Facultad_de_Psicolog%C3%ADa_2023.jpg/1280px-UNMSM_Facultad_de_Psicolog%C3%ADa_2023.jpg",
-      "carreras": 4,
-      "wifi": true
+      "ciudad": "Quito",
+      "campus": "LaPiedra",
+      "photo": "https://www.ecured.cu/images/d/d6/Universidad_Central_del_Ecuador.jpg",
+      "carreras": "9",
+      "Wifi": "true",
+      "id": "6"
     },
     {
       "id": "7",
@@ -73,13 +73,13 @@
       "wifi": true
     },
     {
-      "id": "2460",
-      "nombre": "Facultad de Biologia",
-      "ciudad": "Cuzco ",
+      "nombre": "Facultad de Biología",
+      "ciudad": "Sucre",
       "campus": "NuevaFlor",
-      "photo": "https://biologicas.ucm.es/file/2022-facultad-05?ver=n",
-      "carreras": "4",
-      "Wifi": "true"
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Patiointeriordasfacultadesdeciencias%28UniversidadedeVigo%29.JPG/1280px-Patiointeriordasfacultadesdeciencias%28UniversidadedeVigo%29.JPG",
+      "carreras": "8",
+      "Wifi": "true",
+      "id": "2460"
     },
     {
       "id": "b9aa",
