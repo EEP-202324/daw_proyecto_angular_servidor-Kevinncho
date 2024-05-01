@@ -10,13 +10,13 @@ import org.springframework.boot.test.json.JacksonTester;
 
 @JsonTest
 class FacultadesJsonTest {
-	
+	private static final String URL_FACU_DERECHO= "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg";
 	 @Autowired
 	 private JacksonTester<Facultades> json;
 	 
 	 @Test
 	 void facultadesSerializationTest() throws  IOException{
-		 Facultades facultades= new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum","https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
+		 Facultades facultades= new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum",URL_FACU_DERECHO,
 				 4L,true);
 	 
 	 assertThat(json.write(facultades)).isStrictlyEqualToJson("expected.json");
@@ -39,7 +39,7 @@ class FacultadesJsonTest {
      
      assertThat(json.write(facultades)).hasJsonPathStringValue("@.photo");
      assertThat(json.write(facultades)).extractingJsonPathStringValue("@.photo")
-          .isEqualTo("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg");
+          .isEqualTo(URL_FACU_DERECHO);
      
      assertThat(json.write(facultades)).hasJsonPathNumberValue("@.carreras");
      assertThat(json.write(facultades)).extractingJsonPathNumberValue("@.carreras")
@@ -49,18 +49,31 @@ class FacultadesJsonTest {
              .isEqualTo(true);
 	 
 	 }
-//	 @Test
-//	 void FacultadesDeserializationTest() throws IOException {
-//	    String expected = """
-//	            {
-//	                "id":99,
-//	                "amount":123.45
-//	            }
-//	            """;
-//	    assertThat(json.parse(expected))
-//	            .isEqualTo(new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum","https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
-//	   				 4L,true));
-//	    assertThat(json.parseObject(expected).id()).isEqualTo(99);
-//	    assertThat(json.parseObject(expected).amount()).isEqualTo(123.45);
-//	 }
+	 @Test
+	 void FacultadesDeserializationTest() throws IOException {
+	    String expected = """
+	            {
+	                "id": 0,
+	    			"nombre": "Facultad de Derecho",
+	    			"ciudad": "México",
+	    			"campus": "JurisPraeceptum",
+	    			"photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
+	    			"carreras": 4,
+	    			"wifi": true
+	            }
+	            """;
+	    assertThat(json.parse(expected))
+	            .isEqualTo(new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum",URL_FACU_DERECHO,
+	   				 4L,true));
+	    assertThat(json.parseObject(expected).id()).isEqualTo(0);
+	    assertThat(json.parseObject(expected).nombre()).isEqualTo("Facultad de Derecho");
+	    assertThat(json.parseObject(expected).ciudad()).isEqualTo("México");
+	    assertThat(json.parseObject(expected).campus()).isEqualTo("JurisPraeceptum");
+	    assertThat(json.parseObject(expected).photo()).isEqualTo(URL_FACU_DERECHO);
+	    assertThat(json.parseObject(expected).carreras()).isEqualTo(4);
+	    assertThat(json.parseObject(expected).wifi()).isEqualTo(true);
+
+
+
+	 }
 }
