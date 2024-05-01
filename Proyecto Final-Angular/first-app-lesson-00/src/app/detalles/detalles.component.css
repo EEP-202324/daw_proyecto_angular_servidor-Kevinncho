@@ -69,3 +69,8 @@ input {
     height: 400px;
   }
 }
+h1{
+  margin: 20px 0 20px 0;
+  font-size: 20pt;
+  color: var(--boton-color);
+}

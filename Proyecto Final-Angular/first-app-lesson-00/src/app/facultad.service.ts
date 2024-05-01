@@ -42,6 +42,11 @@ export class FacultadService {
     agregarFacultad(facultadDatos: any): Observable<UbicacionFacultad>{
       return this.http.post<UbicacionFacultad>(this.url, facultadDatos);
     }
+
+    modificarFacultad(facultad: UbicacionFacultad): Observable<FacultadService>{
+      const urlFacultad= `${this.url}/${facultad.id}`;
+      return this.http.put<FacultadService>(urlFacultad,facultad);
+    }
 }
 
 

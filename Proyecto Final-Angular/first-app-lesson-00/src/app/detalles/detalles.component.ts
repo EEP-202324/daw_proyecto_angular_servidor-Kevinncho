@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { FacultadService } from '../facultad.service';
 import { UbicacionFacultad } from '../ubicacion-facultad';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-detalles',
   standalone: true,
@@ -17,57 +18,95 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
     <img class="listing-photo" [src]="ubicacionFacultad?.photo"
       alt="Exterior photo of {{ubicacionFacultad?.nombre}}"/>
     <section class="listing-description">
-      <h2 class="listing-heading">{{ubicacionFacultad?.nombre}}</h2>
-      <p class="listing-location">{{ubicacionFacultad?.ciudad}}, {{ubicacionFacultad?.campus}}</p>
+    <h1 class="section-heading">MODIFICAR FACULTAD</h1>
     </section>
-    <section class="listing-features">
-      <h2 class="section-heading">About this housing location</h2>
-      <ul>
-        <li>Carreras de la facultad: {{ubicacionFacultad?.carreras}}</li>
-        <li>Does this location have wifi: {{ubicacionFacultad?.wifi}}</li>
-      </ul>
       <section class="listing-apply">
-      <h2 class="section-heading">Aplicar ahora para estuidar aqui</h2>
-      <form [formGroup]="aplicarForm" (submit)="presentarSolicitud()">
-        <label for="Nombre">Nombre</label>
-        <input id="Nombre" type="text" formControlName="Nombre">
+      <form [formGroup]="aplicarForm" (submit)="enviar()">
+        <label for="nombre">Nombre Facultad </label>
+        <input id="nombre" type="text" formControlName="nombre">
 
-        <label for="Apellido">Apellido</label>
-        <input id="Apellido" type="text" formControlName="Apellido">
+        <label for="ciudad">Ciudad</label>
+        <input id="ciudad" type="text" formControlName="ciudad">
 
-        <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email">
-        <button type="submit" class="primary">Aplicar</button>
+        <label for="campus">Campus</label>
+        <input id="campus" type="text" formControlName="campus">
+        <label for="photo">Url Foto</label>
+        <input id="photo" type="text" formControlName="photo">
+
+        <label for="carreras">Carreras</label>
+        <input id="carreras" type="text" formControlName="carreras">
+
+        <label for="Wifi">Wifi</label>
+        <input id="Wifi" type="text" formControlName="Wifi">
+
+
+
+        <button type="submit" class="primary">Actualizar</button>
       </form>
-    </section>
     </section>
   </article>
 `,
-  templateUrl: './detalles.component.html',
   styleUrl: './detalles.component.css'
 
 })
-export class DetallesComponent {
-  route: ActivatedRoute = inject(ActivatedRoute);
-  facultadService= inject(FacultadService);
+export class DetallesComponent implements OnInit{
+
   ubicacionFacultad: UbicacionFacultad | undefined;
-  aplicarForm = new FormGroup({
-    Nombre: new FormControl(''),
-    Apellido: new FormControl(''),
-    email: new FormControl('')
-  })
+  aplicarForm: FormGroup;
+  constructor(
+  private route: ActivatedRoute,
+  private facultadService: FacultadService){
 
+  this.aplicarForm = new FormGroup({
+    nombre: new FormControl('',Validators.required),
+    ciudad: new FormControl('',Validators.required),
+    campus: new FormControl('',Validators.required),
 
-    constructor() {
-        const UbicacionFacultadId = Number(this.route.snapshot.params['id']);
+    photo: new FormControl('',Validators.required),
 
-        this.facultadService.getUbicacionFacultad(UbicacionFacultadId).subscribe(
-          ubicacionFacultad=>{
-            this.ubicacionFacultad=ubicacionFacultad;
-          }
-        )
+    carreras: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
 
+    Wifi: new FormControl('', [Validators.required, Validators.pattern('^(true|false)$')])
+  });
+}
+  ngOnInit(): void {
+    const facultadId= Number(this.route.snapshot.params['id']);
+    this.facultadService.getUbicacionFacultad(facultadId).subscribe({
+      next: facultad =>{
+        this.ubicacionFacultad=facultad;
+        this.aplicarForm.patchValue({
+          id: facultad.id,
+          nombre: facultad.nombre,
+          ciudad: facultad.ciudad,
+          campus: facultad.campus,
+          photo: facultad.photo,
+          carreras: facultad.carreras,
+          wifi: facultad.wifi
+        });
+      },
+      error: error =>{
+        console.log('Error al modificar la facultad ', error)
+      }
+  });
   }
+
+  enviar(): void{
+    if(this.aplicarForm.valid){
+      const facultadDatos=this.aplicarForm.value;
+      facultadDatos.id=this.ubicacionFacultad?.id
+      this.facultadService.modificarFacultad(facultadDatos).subscribe({
+        next: facultadActualizada =>{
+            alert('Facultad actualizada con exito');
+        },
+        error: error =>{
+          alert('Ha ocurrido un error');
+          console.log('Ha ocurrido un error',error)
+        }
+      })
+    }
+  }
+
+
     presentarSolicitud(){
       this.facultadService.presentarSolicitud(
         this.aplicarForm.value.Nombre ?? '',
