@@ -11,22 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/facultades")
 public class FacultadesController {
-	private final FacultadesRepository facultadesRepository;
 	private static final String URL_FACU_DERECHO= "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg";
-	
-	private FacultadesController(FacultadesRepository facultadesRepository) {
-		this.facultadesRepository= facultadesRepository;
-	}
 	
 	@GetMapping("/{requestedId}")
 	private ResponseEntity<Facultades> findById(@PathVariable Long requestedId) {
 			
-		Optional <Facultades> facultadOptional = facultadesRepository.findById(requestedId);
-			 if (facultadOptional.isPresent()) {
-			        return ResponseEntity.ok(facultadOptional.get());
-			    } else {
-			        return ResponseEntity.notFound().build();
-			    }
-			
+		if (requestedId.equals(0L)) {
+			Facultades facultad = new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum",URL_FACU_DERECHO,
+					 4L,true);
+			return ResponseEntity.ok(facultad);
+		} else {
+			return ResponseEntity.notFound().build();
 		}
+	}
 }

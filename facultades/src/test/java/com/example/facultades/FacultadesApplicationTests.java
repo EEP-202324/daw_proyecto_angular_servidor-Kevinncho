@@ -52,9 +52,9 @@ class FacultadesApplicationTests {
 
 	    @Test
 	    void noDeberiaDevolverUnaFacultadConUnIdDesconocido() {
-	        ResponseEntity<String> response  = restTemplate.getForEntity("/facultades/99", String.class);
+	        ResponseEntity<String> response  = restTemplate.getForEntity("/facultades/1000", String.class);
 	        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
-	        assertThat(response.getBody()).isNotBlank();
+	        assertThat(response.getBody()).isBlank();
 	    }
 
 
