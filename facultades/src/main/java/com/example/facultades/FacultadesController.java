@@ -10,9 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/facultades")
-public class FacultadesController {
+ class FacultadesController {
 	private static final String URL_FACU_DERECHO= "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg";
 	
+	private final FacultadesRepository facultadesRepository;
+	
+	private FacultadesController(FacultadesRepository facultadesRepository) {
+		this.facultadesRepository=facultadesRepository;
+	}
 	@GetMapping("/{requestedId}")
 	private ResponseEntity<Facultades> findById(@PathVariable Long requestedId) {
 			
