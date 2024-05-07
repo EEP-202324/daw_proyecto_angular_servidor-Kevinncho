@@ -1,13 +1,13 @@
 {
   "locations": [
     {
-      "id": "0",
       "nombre": "Facultad de Derecho",
       "ciudad": "México",
       "campus": "JurisPraeceptum",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
-      "carreras": 4,
-      "wifi": true
+      "carreras": "8",
+      "Wifi": "true",
+      "id": "0"
     },
     {
       "id": "1",

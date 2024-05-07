@@ -20,13 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 	}
 	@GetMapping("/{requestedId}")
 	private ResponseEntity<Facultades> findById(@PathVariable Long requestedId) {
-			
-		if (requestedId.equals(0L)) {
-			Facultades facultad = new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum",URL_FACU_DERECHO,
-					 4L,true);
-			return ResponseEntity.ok(facultad);
-		} else {
-			return ResponseEntity.notFound().build();
-		}
+			Optional<Facultades> facultadesOptional=facultadesRepository.findById(requestedId);
+			if(facultadesOptional.isPresent()) {
+				return ResponseEntity.ok(facultadesOptional.get());
+			}else {
+				return ResponseEntity.notFound().build();
+			}
+		
 	}
 }
