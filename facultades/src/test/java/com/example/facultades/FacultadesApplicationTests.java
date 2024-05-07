@@ -1,6 +1,6 @@
 package com.example.facultades;
 
-import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.DocumentContext; 
 import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +21,12 @@ class FacultadesApplicationTests {
 	    @Test
 	    void deberiaDevolverUnaFacultadCuandoSeGuardenLosDatos() {
 	    	
-	    	ResponseEntity<String> response  = restTemplate.getForEntity("/facultades/0", String.class);
+	    	ResponseEntity<String> response  = restTemplate.getForEntity("/facultades/99", String.class);
 
 	        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 	        DocumentContext documentContext = JsonPath.parse(response.getBody());
 	        Number id = documentContext.read("$.id");
-	        assertThat(id).isEqualTo(0);
+	        assertThat(id).isEqualTo(99);
 
 	        String nombre = documentContext.read("$.nombre");
 	        assertThat(nombre).isEqualTo("Facultad de Derecho");

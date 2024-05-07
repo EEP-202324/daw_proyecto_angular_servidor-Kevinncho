@@ -62,16 +62,14 @@ class FacultadesJsonTest {
 	    			"wifi": true
 	            }
 	            """;
-	    assertThat(json.parse(expected))
-	            .isEqualTo(new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum",URL_FACU_DERECHO,
-	   				 4L,true));
-	    assertThat(json.parseObject(expected).id()).isEqualTo(0);
-	    assertThat(json.parseObject(expected).nombre()).isEqualTo("Facultad de Derecho");
-	    assertThat(json.parseObject(expected).ciudad()).isEqualTo("México");
-	    assertThat(json.parseObject(expected).campus()).isEqualTo("JurisPraeceptum");
-	    assertThat(json.parseObject(expected).photo()).isEqualTo(URL_FACU_DERECHO);
-	    assertThat(json.parseObject(expected).carreras()).isEqualTo(4);
-	    assertThat(json.parseObject(expected).wifi()).isEqualTo(true);
+	    Facultades facultades= json.parseObject(expected);
+	    assertThat(json.parseObject(expected).getId()).isEqualTo(0);
+	    assertThat(json.parseObject(expected).getNombre()).isEqualTo("Facultad de Derecho");
+	    assertThat(json.parseObject(expected).getCiudad()).isEqualTo("México");
+	    assertThat(json.parseObject(expected).getCampus()).isEqualTo("JurisPraeceptum");
+	    assertThat(json.parseObject(expected).getPhoto()).isEqualTo(URL_FACU_DERECHO);
+	    assertThat(json.parseObject(expected).getCarreras()).isEqualTo(4);
+	    assertThat(json.parseObject(expected).getWifi()).isEqualTo(true);
 
 
 
