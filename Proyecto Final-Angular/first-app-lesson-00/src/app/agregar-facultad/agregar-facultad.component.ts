@@ -31,8 +31,7 @@ import { Validators } from '@angular/forms';
         <label for="carreras">Carreras</label>
         <input id="carreras" type="text" formControlName="carreras">
 
-        <label for="Wifi">Wifi</label>
-        <input id="Wifi" type="checkbox" formControlName="Wifi">
+
 
 
 
@@ -53,7 +52,7 @@ export class AgregarFacultadComponent {
 
     carreras: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
 
-    Wifi: new FormControl('', [Validators.required, Validators.pattern('^(true|false)$')])
+   
 
   });
 

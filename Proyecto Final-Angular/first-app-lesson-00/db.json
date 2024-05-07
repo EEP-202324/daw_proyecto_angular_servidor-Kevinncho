@@ -6,7 +6,6 @@
       "campus": "JurisPraeceptum",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
       "carreras": "8",
-      "Wifi": "true",
       "id": "0"
     },
     {
@@ -15,8 +14,7 @@
       "ciudad": "Quito",
       "campus": "Politec",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/E.T.S._de_Ingenieros_Industriales_%28UPM%29_01.jpg/1920px-E.T.S._de_Ingenieros_Industriales_%28UPM%29_01.jpg",
-      "carreras": 7,
-      "wifi": true
+      "carreras": 7
     },
     {
       "id": "2",
@@ -24,8 +22,7 @@
       "ciudad": "Cuzco",
       "campus": "AgroVita",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Edificio_de_Agronom%C3%ADa_Tropical_Sostenible%2C_Facultad_de_Ciencias_Agron%C3%B3micas_%28UES%29.jpg/1280px-Edificio_de_Agronom%C3%ADa_Tropical_Sostenible%2C_Facultad_de_Ciencias_Agron%C3%B3micas_%28UES%29.jpg",
-      "carreras": 8,
-      "wifi": true
+      "carreras": 8
     },
     {
       "id": "3",
@@ -33,8 +30,7 @@
       "ciudad": "Quito",
       "campus": "MedicaPulse",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Harvard_Medical_School_HDR.jpg/1280px-Harvard_Medical_School_HDR.jpg",
-      "carreras": 4,
-      "wifi": true
+      "carreras": 4
     },
     {
       "id": "4",
@@ -42,8 +38,7 @@
       "ciudad": "San Salvador",
       "campus": "UCA",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Facultad_de_arquitectura_urbanismo_y_diseno_UNC.jpg/800px-Facultad_de_arquitectura_urbanismo_y_diseno_UNC.jpg",
-      "carreras": 5,
-      "wifi": true
+      "carreras": 5
     },
     {
       "id": "5",
@@ -51,8 +46,7 @@
       "ciudad": "Sucre",
       "campus": "Arts",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Facultad_de_Bellas_Artes_%28Universidad_Complutense_de_Madrid%29.JPG/1280px-Facultad_de_Bellas_Artes_%28Universidad_Complutense_de_Madrid%29.JPG",
-      "carreras": 8,
-      "wifi": true
+      "carreras": 8
     },
     {
       "nombre": "Facultad de Psicología",
@@ -60,7 +54,6 @@
       "campus": "LaPiedra",
       "photo": "https://www.ecured.cu/images/d/d6/Universidad_Central_del_Ecuador.jpg",
       "carreras": "9",
-      "Wifi": "true",
       "id": "6"
     },
     {
@@ -69,8 +62,7 @@
       "ciudad": "Montevideo",
       "campus": "EDU",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/4/45/Pontevedra_capital_Facultad_Ciencias_de_la_Educaci%C3%B3n_y_del_Deporte.jpg",
-      "carreras": 10,
-      "wifi": true
+      "carreras": 10
     },
     {
       "nombre": "Facultad de Biología",
@@ -78,17 +70,23 @@
       "campus": "NuevaFlor",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Patiointeriordasfacultadesdeciencias%28UniversidadedeVigo%29.JPG/1280px-Patiointeriordasfacultadesdeciencias%28UniversidadedeVigo%29.JPG",
       "carreras": "8",
-      "Wifi": "true",
       "id": "2460"
     },
     {
-      "id": "b9aa",
+      "id": "9",
       "nombre": "Facultad de Economía",
       "ciudad": "Buenos Aires",
       "campus": "FADE",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/SGH_Warsaw_2023_aerial.jpg/1920px-SGH_Warsaw_2023_aerial.jpg",
-      "carreras": "7",
-      "Wifi": "false"
+      "carreras": "7"
+    },
+    {
+      "nombre": "Facultad de Matemáticas",
+      "ciudad": "Quito",
+      "campus": "UCE",
+      "photo": "https://th.bing.com/th/id/OIP.dNR_vLYPr_AJ6b8ZvGZW5QHaFj?rs=1&pid=ImgDetMain",
+      "carreras": "5",
+      "id": "10"
     }
   ]
 }

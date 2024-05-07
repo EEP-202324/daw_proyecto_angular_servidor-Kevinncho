@@ -5,6 +5,6 @@ export interface UbicacionFacultad {
   campus: string;
   photo: string;
   carreras: number;
-  wifi: boolean;
+  
 
 }

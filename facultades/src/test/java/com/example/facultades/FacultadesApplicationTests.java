@@ -21,12 +21,12 @@ class FacultadesApplicationTests {
 	    @Test
 	    void deberiaDevolverUnaFacultadCuandoSeGuardenLosDatos() {
 	    	
-	    	ResponseEntity<String> response  = restTemplate.getForEntity("/facultades/99", String.class);
+	    	ResponseEntity<String> response  = restTemplate.getForEntity("/facultades/1", String.class);
 
 	        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 	        DocumentContext documentContext = JsonPath.parse(response.getBody());
 	        Number id = documentContext.read("$.id");
-	        assertThat(id).isEqualTo(99);
+	        assertThat(id).isEqualTo(1);
 
 	        String nombre = documentContext.read("$.nombre");
 	        assertThat(nombre).isEqualTo("Facultad de Derecho");
@@ -43,8 +43,6 @@ class FacultadesApplicationTests {
 	        Number carreras = documentContext.read("$.carreras");
 	        assertThat(carreras).isEqualTo(4);
 
-	        Boolean wifi = documentContext.read("$.wifi");
-	        assertThat(wifi).isEqualTo(true);
 
 
 	    }

@@ -36,8 +36,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
         <label for="carreras">Carreras</label>
         <input id="carreras" type="text" formControlName="carreras">
 
-        <label for="Wifi">Wifi</label>
-        <input id="Wifi" type="text" formControlName="Wifi">
+       
 
 
 
@@ -66,7 +65,7 @@ export class DetallesComponent implements OnInit{
 
     carreras: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
 
-    Wifi: new FormControl('', [Validators.required, Validators.pattern('^(true|false)$')])
+
   });
 }
   ngOnInit(): void {
@@ -81,7 +80,7 @@ export class DetallesComponent implements OnInit{
           campus: facultad.campus,
           photo: facultad.photo,
           carreras: facultad.carreras,
-          wifi: facultad.wifi
+
         });
       },
       error: error =>{

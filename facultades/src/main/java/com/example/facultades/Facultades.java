@@ -2,24 +2,33 @@ package com.example.facultades;
 
 import org.springframework.data.annotation.Id;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+	@Entity
 	public class Facultades{
-		@Id
+		@jakarta.persistence.Id
+		@GeneratedValue(strategy = GenerationType.AUTO)
 		private Long id;
 		private String nombre;
 		private String ciudad;
 		private String campus;
 		private String photo;
 		private Long carreras;
-		private Boolean wifi;
-		public Facultades(Long id, String nombre, String ciudad, String campus, String photo, Long carreras,
-				Boolean wifi) {
+		
+		
+		public Facultades() {
+			
+		}
+		
+		public Facultades(Long id, String nombre, String ciudad, String campus, String photo, Long carreras) {
 			this.id = id;
 			this.nombre = nombre;
 			this.ciudad = ciudad;
 			this.campus = campus;
 			this.photo = photo;
 			this.carreras = carreras;
-			this.wifi = wifi;
 		}
 		public Long getId() {
 			return id;
@@ -56,12 +65,6 @@ import org.springframework.data.annotation.Id;
 		}
 		public void setCarreras(Long carreras) {
 			this.carreras = carreras;
-		}
-		public Boolean getWifi() {
-			return wifi;
-		}
-		public void setWifi(Boolean wifi) {
-			this.wifi = wifi;
 		}
 		
 		

@@ -17,7 +17,7 @@ class FacultadesJsonTest {
 	 @Test
 	 void facultadesSerializationTest() throws  IOException{
 		 Facultades facultades= new Facultades(0L, "Facultad de Derecho", "México","JurisPraeceptum",URL_FACU_DERECHO,
-				 4L,true);
+				 4L);
 	 
 	 assertThat(json.write(facultades)).isStrictlyEqualToJson("expected.json");
      
@@ -44,9 +44,6 @@ class FacultadesJsonTest {
      assertThat(json.write(facultades)).hasJsonPathNumberValue("@.carreras");
      assertThat(json.write(facultades)).extractingJsonPathNumberValue("@.carreras")
              .isEqualTo(4);
-     assertThat(json.write(facultades)).hasJsonPathBooleanValue("@.wifi");
-     assertThat(json.write(facultades)).extractingJsonPathBooleanValue("@.wifi")
-             .isEqualTo(true);
 	 
 	 }
 	 @Test
@@ -58,8 +55,7 @@ class FacultadesJsonTest {
 	    			"ciudad": "México",
 	    			"campus": "JurisPraeceptum",
 	    			"photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
-	    			"carreras": 4,
-	    			"wifi": true
+	    			"carreras": 4
 	            }
 	            """;
 	    Facultades facultades= json.parseObject(expected);
@@ -69,7 +65,6 @@ class FacultadesJsonTest {
 	    assertThat(json.parseObject(expected).getCampus()).isEqualTo("JurisPraeceptum");
 	    assertThat(json.parseObject(expected).getPhoto()).isEqualTo(URL_FACU_DERECHO);
 	    assertThat(json.parseObject(expected).getCarreras()).isEqualTo(4);
-	    assertThat(json.parseObject(expected).getWifi()).isEqualTo(true);
 
 
 
