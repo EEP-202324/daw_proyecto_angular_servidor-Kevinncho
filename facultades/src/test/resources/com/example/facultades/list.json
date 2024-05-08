@@ -1,0 +1,34 @@
+[
+	  {
+	  "id": 1,
+      "nombre": "Facultad de Derecho",
+      "ciudad": "México",
+      "campus": "JurisPraeceptum",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg",
+      "carreras": 4
+      },
+      {   
+      "id": 2,
+      "nombre": "Facultad de Odontología",
+      "ciudad": "Bogota",
+      "campus": "Colgate",
+      "photo": "https://th.bing.com/th/id/R.ddc292c68e49005abd61c005f8c308cd?rik=I6nxg2Is5NZwzg&riu=http%3a%2f%2fwww.uabjo.mx%2fmedia%2f1%2f2021%2f06%2f2.jpg&ehk=pewkRgzNoamB1fl%2fORldaQltv0Yxk7xFMMTDq76ATuE%3d&risl=&pid=ImgRaw&r=0",
+      "carreras": 4
+      },
+      {    
+      "id": 55,
+      "nombre": "Facultad de Odontología",
+      "ciudad": "Bogota",
+      "campus": "Colgate",
+      "photo": "https://th.bing.com/th/id/R.ddc292c68e49005abd61c005f8c308cd?rik=I6nxg2Is5NZwzg&riu=http%3a%2f%2fwww.uabjo.mx%2fmedia%2f1%2f2021%2f06%2f2.jpg&ehk=pewkRgzNoamB1fl%2fORldaQltv0Yxk7xFMMTDq76ATuE%3d&risl=&pid=ImgRaw&r=0",
+      "carreras": 4
+      },
+      {    
+      "id": 102,
+      "nombre": "Facultad de Odontología",
+      "ciudad": "Bogota",
+      "campus": "Colgate",
+      "photo": "https://th.bing.com/th/id/R.ddc292c68e49005abd61c005f8c308cd?rik=I6nxg2Is5NZwzg&riu=http%3a%2f%2fwww.uabjo.mx%2fmedia%2f1%2f2021%2f06%2f2.jpg&ehk=pewkRgzNoamB1fl%2fORldaQltv0Yxk7xFMMTDq76ATuE%3d&risl=&pid=ImgRaw&r=0",
+      "carreras": 4
+      }
+]
