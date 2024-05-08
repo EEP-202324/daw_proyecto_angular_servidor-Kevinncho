@@ -39,4 +39,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 		            .toUri();
 		return ResponseEntity.created(locationOfNewFacultad).build();
 	}
+	@GetMapping()
+	private ResponseEntity<Iterable<Facultades>> findAll() {
+	   return ResponseEntity.ok(facultadesRepository.findAll());
+	}
 }
