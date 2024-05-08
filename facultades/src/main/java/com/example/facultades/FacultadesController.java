@@ -1,16 +1,20 @@
 package com.example.facultades;
 
-import java.util.Optional; 
+import java.net.URI; 
+import java.util.Optional;  
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/facultades")
- class FacultadesController {
+ public class FacultadesController {
 	private static final String URL_FACU_DERECHO= "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Facultad_de_Derecho_%288617641510%29.jpg/1280px-Facultad_de_Derecho_%288617641510%29.jpg";
 	
 	private final FacultadesRepository facultadesRepository;
@@ -26,6 +30,13 @@ import org.springframework.web.bind.annotation.RestController;
 			}else {
 				return ResponseEntity.notFound().build();
 			}
-		
+	}
+	@PostMapping
+	private ResponseEntity<Void> crearFacultad(@RequestBody Facultades newFacultadRequest, UriComponentsBuilder ucb) {
+		Facultades savedFacultad = facultadesRepository.save(newFacultadRequest);
+		   URI locationOfNewFacultad = ucb.path("facultades/{id}")
+		            .buildAndExpand(savedFacultad.getId())
+		            .toUri();
+		return ResponseEntity.created(locationOfNewFacultad).build();
 	}
 }

@@ -1,6 +1,5 @@
 package com.example.facultades;
 
-import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
