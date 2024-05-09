@@ -7,17 +7,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FacultadService {
-   url = 'http://localhost:3000/locations';
+   //url = 'http://localhost:3000/locations';
+   urlFacultad = 'http://localhost:8080/facultades';
 
    constructor(private http: HttpClient) { }
 
 
    //Esto es un request que nos sirve para conectar con servidor
    getUbicacionFacultad(id: number){
-    return this.http.get<UbicacionFacultad>(`${this.url}/${id}`);
+    return this.http.get<UbicacionFacultad>(`${this.urlFacultad}/${id}`);
    }
    getFacultades(){
-    return this.http.get<UbicacionFacultad[]>(this.url);
+    return this.http.get<UbicacionFacultad[]>(this.urlFacultad);
    }
 /*
   async getAllUbicacionFacultades(): Promise<UbicacionFacultad[]>{
@@ -40,11 +41,11 @@ export class FacultadService {
     }
 
     agregarFacultad(facultadDatos: any): Observable<UbicacionFacultad>{
-      return this.http.post<UbicacionFacultad>(this.url, facultadDatos);
+      return this.http.post<UbicacionFacultad>(this.urlFacultad, facultadDatos);
     }
 
     modificarFacultad(facultad: UbicacionFacultad): Observable<FacultadService>{
-      const urlFacultad= `${this.url}/${facultad.id}`;
+      const urlFacultad= `${this.urlFacultad}/${facultad.id}`;
       return this.http.put<FacultadService>(urlFacultad,facultad);
     }
 }
