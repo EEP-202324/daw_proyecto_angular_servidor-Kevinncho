@@ -1,6 +1,8 @@
 package com.example.facultades;
 
 
+import java.util.Objects;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -64,6 +66,31 @@ import jakarta.persistence.GenerationType;
 		}
 		public void setCarreras(Long carreras) {
 			this.carreras = carreras;
+		}
+
+		@Override
+		public String toString() {
+			return "Facultades [id=" + id + ", nombre=" + nombre + ", ciudad=" + ciudad + ", campus=" + campus
+					+ ", photo=" + photo + ", carreras=" + carreras + "]";
+		}
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(campus, carreras, ciudad, id, nombre, photo);
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Facultades other = (Facultades) obj;
+			return Objects.equals(campus, other.campus) && Objects.equals(carreras, other.carreras)
+					&& Objects.equals(ciudad, other.ciudad) && Objects.equals(id, other.id)
+					&& Objects.equals(nombre, other.nombre) && Objects.equals(photo, other.photo);
 		}
 		
 		

@@ -123,7 +123,7 @@ class FacultadesJsonTest {
       }
 ]
 	          """;	    
-	    assertThat(expected).isEqualTo(facultadeslist);
+	    assertThat(jsonList.parse(expected)).isEqualTo(facultadeslist);
 	 }
 	 @Test
 	 void facultadesListSerializationTest() throws IOException {
