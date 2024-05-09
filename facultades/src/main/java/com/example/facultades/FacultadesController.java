@@ -68,6 +68,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 	}
 	@DeleteMapping("/{id}")
 	private ResponseEntity<Void> deleteFacultad(@PathVariable Long id) {
+		if(!facultadesRepository.existsById(id)) {
+			return ResponseEntity.notFound().build();
+		}
 		facultadesRepository.deleteById(id);
 	    return ResponseEntity.noContent().build();
 	}

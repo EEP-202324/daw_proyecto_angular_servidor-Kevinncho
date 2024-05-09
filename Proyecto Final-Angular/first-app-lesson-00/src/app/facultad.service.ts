@@ -48,6 +48,11 @@ export class FacultadService {
       const urlFacultad= `${this.urlFacultad}/${facultad.id}`;
       return this.http.put<FacultadService>(urlFacultad,facultad);
     }
+
+    borrarFacultad(facultadDatos: UbicacionFacultad): Observable<FacultadService>{
+      const urlFacultad = `${this.urlFacultad}/${facultadDatos.id}`;
+      return this.http.delete<FacultadService>(urlFacultad);
+    }
 }
 
 

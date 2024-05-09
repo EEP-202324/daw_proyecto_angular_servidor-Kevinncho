@@ -63,7 +63,7 @@ class FacultadesApplicationTests {
 	    @Test
 	    @DirtiesContext
 	    void deberiaCrearNuevaFacultad() {
-	       Facultades newFacultad = new Facultades(null, "Facultad de Odontología", "Bogota","Colgate",URL_FACU_ODONTOLOGIA,4L);
+	       Facultades newFacultad = new Facultades(null, "Facultad de Psicología", "Quito","LaPiedra","https://www.ecured.cu/images/d/d6/Universidad_Central_del_Ecuador.jpg",9L);
 	       ResponseEntity<Void> createResponse = restTemplate.postForEntity("/facultades", newFacultad, Void.class);
 	       assertThat(createResponse.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 	       
@@ -81,14 +81,16 @@ class FacultadesApplicationTests {
 	       Number carreras = documentContext.read("$.carreras");
 
 	       assertThat(id).isNotNull();
-	        assertThat(nombre).isEqualTo("Facultad de Odontología");
-	        assertThat(ciudad).isEqualTo("Bogota");
-	        assertThat(campus).isEqualTo("Colgate");
-	        assertThat(photo).isEqualTo(URL_FACU_ODONTOLOGIA);
-	        assertThat(carreras).isEqualTo(4);
+	        assertThat(nombre).isEqualTo("Facultad de Psicología");
+	        assertThat(ciudad).isEqualTo("Quito");
+	        assertThat(campus).isEqualTo("LaPiedra");
+	        assertThat(photo).isEqualTo("https://www.ecured.cu/images/d/d6/Universidad_Central_del_Ecuador.jpg");
+	        assertThat(carreras).isEqualTo(9);
 
 	    }
+	    
 	    @Test
+	    @DirtiesContext
 	    void deberiaDevolverTodasLasFacultadesCuandoSoliciteLista() {
 	    	 ResponseEntity<String> response = restTemplate.getForEntity("/facultades", String.class);
 	         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -98,7 +100,7 @@ class FacultadesApplicationTests {
 	         assertThat(facultadesCount).isEqualTo(4);
 	         
 	         JSONArray ids = documentContext.read("$..id");
-	         assertThat(ids).containsExactlyInAnyOrder(1, 2, 52,102);
+	         assertThat(ids).containsExactlyInAnyOrder(1, 2, 52,1152);
 	         
 	         JSONArray nombres = documentContext.read("$..nombre");
 	         assertThat(nombres).containsExactlyInAnyOrder("Facultad de Derecho", "Facultad de Odontología", "Facultad de Educación inicial","Facultad de Odontología");
@@ -156,16 +158,16 @@ class FacultadesApplicationTests {
 	    @Test
 	    @DirtiesContext
 	    void deberiaEliminarFacultadExistente() {
-	    	ResponseEntity<Void> response = restTemplate.exchange("/facultades/102", HttpMethod.DELETE, null, Void.class);
+	    	ResponseEntity<Void> response = restTemplate.exchange("/facultades/1253", HttpMethod.DELETE, null, Void.class);
 	    	
 	    	assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
-	    	ResponseEntity<String> getResponse = restTemplate.getForEntity("/facultades/102", String.class);
+	    	ResponseEntity<String> getResponse = restTemplate.getForEntity("/facultades/1253", String.class);
 	   
 	    	assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
 	    }
 	    @Test
 	    void noDeberiaEliminarUnaFacultadQueNoExiste() {
-	    	ResponseEntity<Void> deleteResponse = restTemplate .exchange("/cashcards/99999", HttpMethod.DELETE, null, Void.class);
+	    	ResponseEntity<Void> deleteResponse = restTemplate .exchange("/facultades/99999", HttpMethod.DELETE, null, Void.class);
 	    	
 	    	assertThat(deleteResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
 	    }

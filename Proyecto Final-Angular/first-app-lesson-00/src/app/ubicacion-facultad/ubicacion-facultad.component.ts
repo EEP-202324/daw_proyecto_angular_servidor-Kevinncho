@@ -17,7 +17,7 @@ import { FacultadService } from '../facultad.service';
     <h2 class="listing-heading">{{ ubicacionFacultad.nombre }}</h2>
     <p class="listing-location">{{ ubicacionFacultad.ciudad}}, {{ubicacionFacultad.campus }}</p>
     <a [routerLink]= "['/details', ubicacionFacultad.id]">Modificar</a>
-    <a src="#">Borrar</a>
+    <a (click)="borrarFacultad(ubicacionFacultad)" href="#">Borrar</a>
   </section>
   `,
   styleUrls: ['./ubicacion-facultad.component.css'],
@@ -30,14 +30,29 @@ export class UbicacionFacultadComponent implements OnInit{
     this.ObtenerFacultades();
   }
   ObtenerFacultades(){
-    this.facultadService.getFacultades().subscribe(
-      facultades =>{
+    this.facultadService.getFacultades().subscribe({
+      next: facultades =>{
           this.ubicacionFacultades=facultades;
       },
-      error =>{
+     error: error =>{
         console.error('Error al obtener las facultades: ', error);
       }
-    );
+  });
   }
   @Input() ubicacionFacultad!: UbicacionFacultad;
+
+  borrarFacultad(ubicacionFacultad: UbicacionFacultad) {
+    this.facultadService.borrarFacultad(ubicacionFacultad).subscribe({
+      next: () => {
+        console.log('Facultad borrada correctamente');
+        alert('Facultad borrada correctamente');
+        this.ObtenerFacultades();
+      },
+      error: error => {
+        console.error('Error al borrar la facultad: ', error);
+        alert('Error al borrar la facultad');
+      }
+  });
+  }
+
 }
