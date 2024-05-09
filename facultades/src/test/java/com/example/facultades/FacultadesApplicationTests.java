@@ -153,6 +153,22 @@ class FacultadesApplicationTests {
 	    	assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
 	    }
 	    
+	    @Test
+	    @DirtiesContext
+	    void deberiaEliminarFacultadExistente() {
+	    	ResponseEntity<Void> response = restTemplate.exchange("/facultades/102", HttpMethod.DELETE, null, Void.class);
+	    	
+	    	assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+	    	ResponseEntity<String> getResponse = restTemplate.getForEntity("/facultades/102", String.class);
+	   
+	    	assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+	    }
+	    @Test
+	    void noDeberiaEliminarUnaFacultadQueNoExiste() {
+	    	ResponseEntity<Void> deleteResponse = restTemplate .exchange("/cashcards/99999", HttpMethod.DELETE, null, Void.class);
+	    	
+	    	assertThat(deleteResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+	    }
 
 
 }
