@@ -1,4 +1,4 @@
-##Gestión Facultades (Angular y Spring)
+## Gestión Facultades (Angular y Spring)
 
 ### Descripción del proyecto:
 
@@ -26,7 +26,7 @@ Utilizamos esta herramienta para levantar el servidor de la aplicación, además
 
 ### Puntos de Rúbrica no implementados:
 
-###Angular:
+####Angular:
 
 -Implementación del Widget .
 -La paginación para que aparezca una cantidad de facultades por pagina. 
