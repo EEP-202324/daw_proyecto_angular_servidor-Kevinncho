@@ -62,13 +62,7 @@ export class FacultadComponent {
       this.listaUbicacionesFiltradas=this.ubicacionFacultadList.filter(
         ubicacionFacultad => ubicacionFacultad?.ciudad.toLowerCase().includes(text.toLowerCase())
       );}
-      AgregarFacultades(){
-      }
-      BorrarFacultades(){
-      }
 
-      ModificarFacultades(){
 
-      }
 }
 
