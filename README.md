@@ -10,30 +10,30 @@ Así mismo, en la parte de arriba podremos observar el logotipo de la facultad c
 #### Angular: 
 La aplicación con tiene tres paginas, en los cuales se encuentra la pagina de inicio donde se tiene todas las facultades, otra para añadir una nueva y finalmente una pagina para modificar una facultad existente.
 
--Contiene una barra de búsqueda la cual filtra las facultades por ciudad.
--Tiene una pantalla con un formulario el cual permite agregar una nueva facultad.
--Tiene una pantalla con un formulario en el cual se puede observar los datos que tiene la facultad y  actualizarlos.
--También contiene un botón de eliminar facultad en la que aparece en cada facultad de la pagina principal. 
+- Contiene una barra de búsqueda la cual filtra las facultades por ciudad.
+- Tiene una pantalla con un formulario el cual permite agregar una nueva facultad.
+- Tiene una pantalla con un formulario en el cual se puede observar los datos que tiene la facultad y  actualizarlos.
+- También contiene un botón de eliminar facultad en la que aparece en cada facultad de la pagina principal. 
 
 #### Spring: 
 Utilizamos esta herramienta para levantar el servidor de la aplicación, además de conectar la herramienta de angular con Spring, para que se puedan gestionar las facultades en java por medio  del controller. Así mismo, los datos de las facultades se pueden obtener del repositorio que esta conectando con la base de datos de MySQL.
 
--Se agrego el método GET para obtener la facultad o la lista de facultades que están almacenadas en la base de datos.
--Para la creación de una nueva facultad utilizamos POST.
--Usamos PUT para modificar la facultad.
--También utilizamos DELETE para eliminar la facultad.
--Se utilizo les test unitarios para comprobar el POST, PUT, DELETE, así como la serialización y deserialización de la facultad las cuales pudimos comprobar con éxito.
+- Se agrego el método GET para obtener la facultad o la lista de facultades que están almacenadas en la base de datos.
+- Para la creación de una nueva facultad utilizamos POST.
+- Usamos PUT para modificar la facultad.
+- También utilizamos DELETE para eliminar la facultad.
+- Se utilizo les test unitarios para comprobar el POST, PUT, DELETE, así como la serialización y deserialización de la facultad las cuales pudimos comprobar con éxito.
 
 ### Puntos de Rúbrica no implementados:
 
-####Angular:
+#### Angular:
 
--Implementación del Widget .
--La paginación para que aparezca una cantidad de facultades por pagina. 
--Uso de Test Unitarios. 
+- Implementación del Widget .
+- La paginación para que aparezca una cantidad de facultades por pagina. 
+- Uso de Test Unitarios. 
  
 #### Spring:
--Implementación de la paginación.
--Añadir una tabla adicional.
--Consultas de búsquedas por filtrado.
+- Implementación de la paginación.
+- Añadir una tabla adicional.
+- Consultas de búsquedas por filtrado.
 
