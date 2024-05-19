@@ -37,3 +37,5 @@ Utilizamos esta herramienta para levantar el servidor de la aplicación, además
 - Añadir una tabla adicional.
 - Consultas de búsquedas por filtrado.
 
+### Enlace del video de Angular y Spring:
+ https://eepmad-my.sharepoint.com/:v:/g/personal/kmateo-simbana1_eep-igroup_com/EWgnAOiNNJ1Pgfs7ippeZBkBgq-tjzyXhKn3IBXDyi2ohg?e=HFqBpT&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
